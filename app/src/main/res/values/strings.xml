@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Tesla Geek</string>
+    <string name="textTeslaS">Model S</string>
+    <string name="textTesla3">Model 3</string>
+    <string name="textTeslaX">Model X</string>
+    <string name="textTeslaY">Model Y</string>
+    <string name="textZagolovok">Модельный ряд автомобилей Tesla</string>
+    <string name="textTypeStandard">Standard Plus</string>
+    <string name="textTypeLongRange">Long Range</string>
+    <string name="textTypePerformance">Performance</string>
+    <string name="white">Pearl White Multi-Coat</string>
+    <string name="grey">Midnight Silver Metallic</string>
+    <string name="blue">Deep Blue Metallic</string>
+    <string name="black">Solid Black</string>
+    <string name="red">Red Multi-Coat</string>
+    <string name="textPaint">Цвет кузова</string>
+    <string name="textWheels">Дизайн дисков</string>
+    <string name="wheelsModel318">18\'\' Aero Wheels</string>
+    <string name="wheelsModel319">19\'\' Sport Wheels</string>
+    <string name="wheelsModel320">20\'\' Überturbine Wheels</string>
+    <string name="wheelsModelS19">19\'\' Tempest Wheels</string>
+    <string name="wheelsModelS21">21\'\' Arachnid Wheels</string>
+    <string name="wheelsModelX20">20\'\' Cyberstream Wheels</string>
+    <string name="wheelsModelX22">22\'\' Turbine Wheels</string>
+    <string name="wheelsModelY19">19\'\' Gemini Wheels</string>
+    <string name="wheelsModelY20">20\'\' Induction Wheels</string>
+    <string name="wheelsModelY21">21\'\' Überturbine Wheels</string>
+
+</resources>
