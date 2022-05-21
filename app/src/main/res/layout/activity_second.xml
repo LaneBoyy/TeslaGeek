@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/teslafont"
         android:textColor="@color/white"
-        android:textSize="23sp"
+        android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
@@ -25,15 +25,18 @@
 
     <TextView
         android:id="@+id/textTypeTesla"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/teslafont"
+        android:gravity="right"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:textColor="@color/white"
-        android:textSize="23sp"
+        android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textNameTesla"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.05"
         tools:text="@string/textTypeStandard" />
@@ -69,7 +72,7 @@
         app:layout_constraintVertical_bias="0.9">
 
         <RadioButton
-            android:id="@+id/radioButtonStandartPlus"
+            android:id="@+id/radioButtonFirstConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -80,7 +83,7 @@
             android:textSize="18sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonLongRange"
+            android:id="@+id/radioButtonSecondConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -90,7 +93,7 @@
             android:textSize="18sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonPerformance"
+            android:id="@+id/radioButtonThirdConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -109,13 +112,13 @@
         android:layout_marginBottom="260dp"
         android:text="Запас \nхода"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/textAcceleration0100"
@@ -124,13 +127,13 @@
         android:layout_marginBottom="260dp"
         android:text="Разгон\n0 - 100"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/textMaxSpeed"
@@ -139,20 +142,20 @@
         android:layout_marginBottom="260dp"
         android:text="Макс. \nскорость"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="19sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/PowerReserve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textPowerReserve"
         app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textAcceleration0100"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textMaxSpeed"
         app:layout_constraintEnd_toEndOf="parent"
