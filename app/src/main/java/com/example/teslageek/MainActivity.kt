@@ -1,11 +1,7 @@
 package com.example.teslageek
 
-import android.R
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.teslageek.databinding.ActivityMainBinding
 
@@ -28,8 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTeslaS.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model S")
-            intent.putExtra("TextTypeTesla", "Plaid")
-            //intent.putExtra("picTesla", R.drawable.models)
+            intent.putExtra("ImgTesla", R.drawable.teslaswhite2)
             startActivity(intent)
         }
     }
@@ -38,8 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTesla3.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model 3")
-            intent.putExtra("TextTypeTesla", "Performance")
-            //intent.putExtra("picTesla", R.drawable.model3)
+            intent.putExtra("ImgTesla", R.drawable.tesla3white2)
             startActivity(intent)
         }
     }
@@ -48,8 +42,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTeslaX.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model X")
-            intent.putExtra("TextTypeTesla", "Long range")
-            //intent.putExtra("picTesla", R.drawable.modelx)
+            intent.putExtra("ImgTesla", R.drawable.teslaxwhite2)
             startActivity(intent)
         }
     }
@@ -58,8 +51,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTeslaY.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model Y")
-            intent.putExtra("TextTypeTesla", "Standart Plus")
-            //intent.putExtra("picTesla", R.drawable.modely)
+            intent.putExtra("ImgTesla", R.drawable.teslaywhite2)
             startActivity(intent)
         }
     }

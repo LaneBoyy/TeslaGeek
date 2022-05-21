@@ -3,6 +3,9 @@ package com.example.teslageek
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.RadioGroup
 import com.example.teslageek.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -11,139 +14,151 @@ class SecondActivity : AppCompatActivity() {
         ActivitySecondBinding.inflate(layoutInflater)
     }
 
+    private var teslaModelName = ""
+    private var teslaImage = 0
+    private var activeType = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val intent = intent
-        val teslaModelName = intent.getStringExtra("TextModelTesla").toString()
+        teslaModelName = intent.getStringExtra("TextModelTesla").toString()
+        teslaImage = intent.getIntExtra("ImgTesla", 0)
         binding.textNameTesla.text = teslaModelName
         binding.textTypeTesla.setText(R.string.textTypeStandard)
+        binding.bigTeslaImage.setImageResource(teslaImage)
 
-        when (teslaModelName) {
-            "Model S" -> binding.bigTeslaImage.setImageResource(R.drawable.teslaswhite2)
-            "Model 3" -> binding.bigTeslaImage.setImageResource(R.drawable.tesla3white2)
-            "Model X" -> binding.bigTeslaImage.setImageResource(R.drawable.teslaxwhite2)
-            "Model Y" -> binding.bigTeslaImage.setImageResource(R.drawable.teslaywhite2)
-        }
+        setConfiguration()
+        setRadioButtons()
+        launchNextScreen()
 
+    }
+
+
+    private fun setRadioButtons() {
+        binding.radioGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
+            override fun onCheckedChanged(radioGroup: RadioGroup?, radioId: Int) {
+                when (radioId) {
+                    binding.radioButtonFirstConfig.id -> {
+                        activeType = 1
+                        setConfiguration()
+                    }
+
+                    binding.radioButtonSecondConfig.id -> {
+                        activeType = 2
+                        setConfiguration()
+                    }
+
+                    binding.radioButtonThirdConfig.id -> {
+                        activeType = 3
+                        setConfiguration()
+                    }
+                }
+            }
+        })
+    }
+
+    private fun setConfiguration() {
+        var powerReserve = ""
+        var maxSpeed = ""
+        var acceleration0100 = ""
+        var teslaType = ""
         when (teslaModelName) {
             "Model S" -> {
-                binding.PowerReserve.text = "450 km"
-                binding.MaxSpeed.text = "250 km/h"
-                binding.Acceleration0100.text = "4.2 s"
+                binding.radioButtonFirstConfig.text = "Long Rage"
+                binding.radioButtonSecondConfig.text = "Plaid"
+                binding.radioButtonThirdConfig.visibility = View.GONE
+                when (activeType) {
+                    1 -> {
+                        powerReserve = "663 km"
+                        maxSpeed = "250 km/h"
+                        acceleration0100 = "3.2 s"
+                        teslaType = "Long Range"
+                    }
+                    2 -> {
+                        powerReserve = "637 km"
+                        maxSpeed = "322 km/h"
+                        acceleration0100 = "2.1 s"
+                        teslaType = "Plaid"
+                    }
+                }
             }
             "Model 3" -> {
-                binding.PowerReserve.text = "491 km"
-                binding.MaxSpeed.text = "225 km/h"
-                binding.Acceleration0100.text = "6.1 s"
+                when (activeType) {
+                    1 -> {
+                        powerReserve = "491 km"
+                        maxSpeed = "225 km/h"
+                        acceleration0100 = "6.1 s"
+                        teslaType = "Standard Plus"
+                    }
+                    2 -> {
+                        powerReserve = "602 km"
+                        maxSpeed = "233 km/h"
+                        acceleration0100 = "4.4 s"
+                        teslaType = "Long Range"
+                    }
+                    3 -> {
+                        powerReserve = "547 km"
+                        maxSpeed = "351 km/h"
+                        acceleration0100 = "3.7 s"
+                        teslaType = "Performance"
+                    }
+                }
             }
             "Model Y" -> {
-                binding.PowerReserve.text = "393 km"
-                binding.MaxSpeed.text = "217 km/h"
-                binding.Acceleration0100.text = "5.3 s"
+                when (activeType) {
+                    1 -> {
+                        powerReserve = "393 km"
+                        maxSpeed = "217 km/h"
+                        acceleration0100 = "5.3 s"
+                        teslaType = "Standard Plus"
+                    }
+                    2 -> {
+                        powerReserve = "533 km"
+                        maxSpeed = "217 km/h"
+                        acceleration0100 = "5 s"
+                        teslaType = "Long Range"
+                    }
+                    3 -> {
+                        powerReserve = "514 km"
+                        maxSpeed = "250 km/h"
+                        acceleration0100 = "3.7 s"
+                        teslaType = "Performance"
+                    }
+                }
             }
             "Model X" -> {
-                binding.PowerReserve.text = "411 km"
-                binding.MaxSpeed.text = "250 km/h"
-                binding.Acceleration0100.text = "4.6 s"
+                binding.radioButtonFirstConfig.text = "Long Rage"
+                binding.radioButtonSecondConfig.text = "Plaid"
+                binding.radioButtonThirdConfig.visibility = View.GONE
+                when (activeType) {
+                    1 -> {
+                        powerReserve = "580 km"
+                        maxSpeed = "250 km/h"
+                        acceleration0100 = "3.9 s"
+                        teslaType = "Long Range"
+                    }
+                    2 -> {
+                        powerReserve = "547 km"
+                        maxSpeed = "262 km/h"
+                        acceleration0100 = "2.6 s"
+                        teslaType = "Plaid"
+                    }
+                }
             }
+
         }
+        binding.PowerReserve.text = powerReserve
+        binding.MaxSpeed.text = maxSpeed
+        binding.Acceleration0100.text = acceleration0100
+        binding.textTypeTesla.text = teslaType
+    }
 
-        clickOnStandardPlus()
-        clickOnLongRange()
-        clickOnPerformance()
-
+    private fun launchNextScreen() {
         binding.arrowNext.setOnClickListener {
             val intentToNext = Intent(this, WheelsAndColorActivity::class.java)
             intentToNext.putExtra("teslaName", teslaModelName)
             intentToNext.putExtra("teslaType", binding.textTypeTesla.text)
             startActivity(intentToNext)
-        }
-
-    }
-
-    private fun clickOnStandardPlus() {
-        binding.radioButtonStandartPlus.setOnClickListener {
-            binding.textTypeTesla.setText(R.string.textTypeStandard)
-            when (binding.textNameTesla.text) {
-                "Model S" -> {
-                    binding.PowerReserve.text = "450 km"
-                    binding.MaxSpeed.text = "250 km/h"
-                    binding.Acceleration0100.text = "4.2 s"
-                }
-                "Model 3" -> {
-                    binding.PowerReserve.text = "491 km"
-                    binding.MaxSpeed.text = "225 km/h"
-                    binding.Acceleration0100.text = "6.1 s"
-                }
-                "Model Y" -> {
-                    binding.PowerReserve.text = "393 km"
-                    binding.MaxSpeed.text = "217 km/h"
-                    binding.Acceleration0100.text = "5.3 s"
-                }
-                "Model X" -> {
-                    binding.PowerReserve.text = "411 km"
-                    binding.MaxSpeed.text = "250 km/h"
-                    binding.Acceleration0100.text = "4.6 s"
-                }
-            }
-        }
-    }
-
-    private fun clickOnLongRange() {
-        binding.radioButtonLongRange.setOnClickListener {
-            binding.textTypeTesla.setText(R.string.textTypeLongRange)
-            when (binding.textNameTesla.text) {
-                "Model S" -> {
-                    binding.PowerReserve.text = "663 km"
-                    binding.MaxSpeed.text = "250 km/h"
-                    binding.Acceleration0100.text = "3.2 s"
-                }
-                "Model 3" -> {
-                    binding.PowerReserve.text = "602 km"
-                    binding.MaxSpeed.text = "233 km/h"
-                    binding.Acceleration0100.text = "4.4 s"
-                }
-                "Model Y" -> {
-                    binding.PowerReserve.text = "533 km"
-                    binding.MaxSpeed.text = "217 km/h"
-                    binding.Acceleration0100.text = "5 s"
-                }
-                "Model X" -> {
-                    binding.PowerReserve.text = "580 km"
-                    binding.MaxSpeed.text = "250 km/h"
-                    binding.Acceleration0100.text = "3.9 s"
-                }
-            }
-        }
-    }
-
-    private fun clickOnPerformance() {
-        binding.radioButtonPerformance.setOnClickListener {
-            binding.textTypeTesla.setText(R.string.textTypePerformance)
-            when (binding.textNameTesla.text) {
-                "Model S" -> {
-                    binding.PowerReserve.text = "637 km"
-                    binding.MaxSpeed.text = "322 km/h"
-                    binding.Acceleration0100.text = "2.1 s"
-                }
-                "Model 3" -> {
-                    binding.PowerReserve.text = "547 km"
-                    binding.MaxSpeed.text = "261 km/h"
-                    binding.Acceleration0100.text = "3.3 s"
-                }
-                "Model Y" -> {
-                    binding.PowerReserve.text = "514 km"
-                    binding.MaxSpeed.text = "250 km/h"
-                    binding.Acceleration0100.text = "3.7 s"
-                }
-                "Model X" -> {
-                    binding.PowerReserve.text = "547 km"
-                    binding.MaxSpeed.text = "262 km/h"
-                    binding.Acceleration0100.text = "2.6 s"
-                }
-            }
-
         }
     }
 }

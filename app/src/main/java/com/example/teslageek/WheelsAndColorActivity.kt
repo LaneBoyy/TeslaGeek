@@ -98,8 +98,8 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.black.setOnClickListener {
             binding.colorName.setText(R.string.black)
             when (binding.teslaName.text) {
-                "Model S" -> binding.teslaImage.setImageResource(R.drawable.teslasblack2)
-                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla3black2)
+                "Model S" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_black_2)
+                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_2)
                 "Model X" -> binding.teslaImage.setImageResource(R.drawable.teslaxblack2)
                 "Model Y" -> binding.teslaImage.setImageResource(R.drawable.teslayblack2)
             }
