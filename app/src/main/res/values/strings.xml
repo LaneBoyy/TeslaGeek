@@ -16,15 +16,15 @@
     <string name="red">Red Multi-Coat</string>
     <string name="textPaint">Цвет кузова</string>
     <string name="textWheels">Дизайн дисков</string>
-    <string name="wheelsModel318">18\'\' Aero Wheels</string>
-    <string name="wheelsModel319">19\'\' Sport Wheels</string>
-    <string name="wheelsModel320">20\'\' Überturbine Wheels</string>
-    <string name="wheelsModelS19">19\'\' Tempest Wheels</string>
-    <string name="wheelsModelS21">21\'\' Arachnid Wheels</string>
-    <string name="wheelsModelX20">20\'\' Cyberstream Wheels</string>
-    <string name="wheelsModelX22">22\'\' Turbine Wheels</string>
-    <string name="wheelsModelY19">19\'\' Gemini Wheels</string>
-    <string name="wheelsModelY20">20\'\' Induction Wheels</string>
-    <string name="wheelsModelY21">21\'\' Überturbine Wheels</string>
+    <string name="wheels_Model_3_18">18r Aero Wheels</string>
+    <string name="wheels_Model_3_19">19r Sport Wheels</string>
+    <string name="wheels_Model_3_20">20r Überturbine Wheels</string>
+    <string name="wheels_Model_S_19">19r Tempest Wheels</string>
+    <string name="wheels_Model_S_21">21r Arachnid Wheels</string>
+    <string name="wheels_Model_X_20">20r Cyberstream Wheels</string>
+    <string name="wheels_Model_X_22">22r Turbine Wheels</string>
+    <string name="wheels_Model_Y_19">19r Gemini Wheels</string>
+    <string name="wheels_Model_Y_20">20r Induction Wheels</string>
+    <string name="wheels_Model_Y_21">21r Überturbine Wheels</string>
 
 </resources>

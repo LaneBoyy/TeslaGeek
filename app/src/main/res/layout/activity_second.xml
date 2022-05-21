@@ -27,10 +27,10 @@
         android:id="@+id/textTypeTesla"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/teslafont"
-        android:gravity="right"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
+        android:fontFamily="@font/teslafont"
+        android:gravity="right"
         android:textColor="@color/white"
         android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,14 +58,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            tools:src="@drawable/tesla3white2" />
+            tools:src="@drawable/tesla_3_white_2" />
     </FrameLayout>
-
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="180dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
@@ -75,6 +74,7 @@
             android:id="@+id/radioButtonFirstConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="top"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:checked="true"
@@ -86,6 +86,7 @@
             android:id="@+id/radioButtonSecondConfig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="top"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/textTypeLongRange"
@@ -99,9 +100,9 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="@string/textTypePerformance"
-            android:visibility="visible"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="visible" />
 
     </RadioGroup>
 
@@ -109,6 +110,7 @@
         android:id="@+id/textPowerReserve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="top"
         android:layout_marginBottom="260dp"
         android:text="Запас \nхода"
         android:textColor="@color/white"
@@ -168,6 +170,7 @@
         android:id="@+id/Acceleration0100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="start"
         android:textColor="@color/white"
         android:textSize="23sp"
         android:textStyle="bold"

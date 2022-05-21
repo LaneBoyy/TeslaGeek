@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTeslaS.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model S")
-            intent.putExtra("ImgTesla", R.drawable.teslaswhite2)
+            intent.putExtra("ImgTesla", R.drawable.tesla_s_white_2)
             startActivity(intent)
         }
     }
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTesla3.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model 3")
-            intent.putExtra("ImgTesla", R.drawable.tesla3white2)
+            intent.putExtra("ImgTesla", R.drawable.tesla_3_white_2)
             startActivity(intent)
         }
     }
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTeslaX.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model X")
-            intent.putExtra("ImgTesla", R.drawable.teslaxwhite2)
+            intent.putExtra("ImgTesla", R.drawable.tesla_x_white_2)
             startActivity(intent)
         }
     }
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         binding.imageTeslaY.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("TextModelTesla", "Model Y")
-            intent.putExtra("ImgTesla", R.drawable.teslaywhite2)
+            intent.putExtra("ImgTesla", R.drawable.tesla_y_white_2)
             startActivity(intent)
         }
     }

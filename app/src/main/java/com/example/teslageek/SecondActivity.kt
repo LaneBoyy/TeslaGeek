@@ -33,9 +33,8 @@ class SecondActivity : AppCompatActivity() {
 
     }
 
-
     private fun setRadioButtons() {
-        binding.radioGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
+        binding.radioGroup.setOnCheckedChangeListener(object:RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(radioGroup: RadioGroup?, radioId: Int) {
                 when (radioId) {
                     binding.radioButtonFirstConfig.id -> {

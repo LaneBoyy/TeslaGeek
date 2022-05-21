@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            tools:src="@drawable/tesla3white2" />
+            tools:src="@drawable/tesla_3_white_2" />
     </FrameLayout>
 
     <TextView
@@ -169,20 +169,22 @@
             android:id="@+id/wheel1"
             android:layout_width="85dp"
             android:layout_height="85dp"
-            tools:background="@drawable/wheelsmodel318r" />
+            android:layout_margin="10dp"
+            tools:background="@drawable/wheels_model_3_18r" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/wheel2"
             android:layout_width="85dp"
             android:layout_height="85dp"
-            android:layout_margin="15dp"
-            tools:background="@drawable/wheelsmodel319r" />
+            android:layout_margin="10dp"
+            tools:background="@drawable/wheels_model_3_19r" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/wheel3"
             android:layout_width="85dp"
             android:layout_height="85dp"
-            tools:background="@drawable/wheelsmodel320r" />
+            android:layout_margin="10dp"
+            tools:background="@drawable/wheels_model_3_20r" />
 
     </LinearLayout>
 
@@ -198,7 +200,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/wheelsModel318" />
+        tools:text="@string/wheels_Model_3_19" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/arrowNext"

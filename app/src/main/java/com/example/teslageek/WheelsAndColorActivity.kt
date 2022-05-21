@@ -2,6 +2,7 @@ package com.example.teslageek
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.teslageek.databinding.ActivityWheelsAndColorBinding
 
 class WheelsAndColorActivity : AppCompatActivity() {
@@ -21,30 +22,32 @@ class WheelsAndColorActivity : AppCompatActivity() {
 
         when (teslaModelName2) {
             "Model S" -> {
-                binding.teslaImage.setImageResource(R.drawable.teslaswhite2)
-                binding.wheel1.setBackgroundResource(R.drawable.wheelsmodels19r)
-                binding.wheel2.setBackgroundResource(R.drawable.wheelsmodels21r)
-                binding.wheelName.setText(R.string.wheelsModelS21)
+                binding.teslaImage.setImageResource(R.drawable.tesla_s_white_2)
+                binding.wheel1.setBackgroundResource(R.drawable.wheels_model_s_19r)
+                binding.wheel2.setBackgroundResource(R.drawable.wheels_model_s_21r)
+                binding.wheelName.setText(R.string.wheels_Model_S_21)
+                binding.wheel3.visibility = View.GONE
             }
             "Model 3" -> {
-                binding.teslaImage.setImageResource(R.drawable.tesla3white2)
-                binding.wheel1.setBackgroundResource(R.drawable.wheelsmodel318r)
-                binding.wheel2.setBackgroundResource(R.drawable.wheelsmodel319r)
-                binding.wheel3.setBackgroundResource(R.drawable.wheelsmodel320r)
-                binding.wheelName.setText(R.string.wheelsModel319)
+                binding.teslaImage.setImageResource(R.drawable.tesla_3_white_2)
+                binding.wheel1.setBackgroundResource(R.drawable.wheels_model_3_18r)
+                binding.wheel2.setBackgroundResource(R.drawable.wheels_model_3_19r)
+                binding.wheel3.setBackgroundResource(R.drawable.wheels_model_3_20r)
+                binding.wheelName.setText(R.string.wheels_Model_3_19)
             }
             "Model X" -> {
-                binding.teslaImage.setImageResource(R.drawable.teslaxwhite2)
-                binding.wheel1.setBackgroundResource(R.drawable.wheelsmodelx20r)
-                binding.wheel2.setBackgroundResource(R.drawable.wheelsmodelx22r)
-                binding.wheelName.setText(R.string.wheelsModelX22)
+                binding.teslaImage.setImageResource(R.drawable.tesla_x_white_2)
+                binding.wheel1.setBackgroundResource(R.drawable.wheels_model_x_20r)
+                binding.wheel2.setBackgroundResource(R.drawable.wheels_model_x_22r)
+                binding.wheelName.setText(R.string.wheels_Model_X_22)
+                binding.wheel3.visibility = View.GONE
             }
             "Model Y" -> {
-                binding.teslaImage.setImageResource(R.drawable.teslaywhite2)
-                binding.wheel1.setBackgroundResource(R.drawable.wheelsmodely19r)
-                binding.wheel2.setBackgroundResource(R.drawable.wheelsmodely20r)
-                binding.wheel3.setBackgroundResource(R.drawable.wheelsmodely21r)
-                binding.wheelName.setText(R.string.wheelsModelY20)
+                binding.teslaImage.setImageResource(R.drawable.tesla_y_white_2)
+                binding.wheel1.setBackgroundResource(R.drawable.wheels_model_y_19r)
+                binding.wheel2.setBackgroundResource(R.drawable.wheels_model_y_20r)
+                binding.wheel3.setBackgroundResource(R.drawable.wheels_model_y_21r)
+                binding.wheelName.setText(R.string.wheels_Model_Y_20)
             }
         }
 
@@ -62,10 +65,24 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.white.setOnClickListener {
             binding.colorName.setText(R.string.white)
             when (binding.teslaName.text) {
-                "Model S" -> binding.teslaImage.setImageResource(R.drawable.teslaswhite2)
-                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla3white2)
-                "Model X" -> binding.teslaImage.setImageResource(R.drawable.teslaxwhite2)
-                "Model Y" -> binding.teslaImage.setImageResource(R.drawable.teslaywhite2)
+                "Model S" -> when (binding.wheelName.text) {
+                    "19r Tempest Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_white_1)
+                    "21r Arachnid Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_white_2)
+                }
+                "Model 3" -> when (binding.wheelName.text) {
+                    "18r Aero Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_white_1)
+                    "19r Sport Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_white_2)
+                    "20r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_white_3)
+                }
+                "Model X" -> when (binding.wheelName.text) {
+                    "20r Cyberstream Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_white_1)
+                    "22r Turbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_white_2)
+                }
+                "Model Y" -> when (binding.wheelName.text) {
+                    "19r Gemini Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_white_1)
+                    "20r Induction Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_white_2)
+                    "21r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_white_3)
+                }
             }
         }
     }
@@ -74,10 +91,24 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.grey.setOnClickListener {
             binding.colorName.setText(R.string.grey)
             when (binding.teslaName.text) {
-                "Model S" -> binding.teslaImage.setImageResource(R.drawable.teslasgrey2)
-                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla3grey2)
-                "Model X" -> binding.teslaImage.setImageResource(R.drawable.teslaxgrey2)
-                "Model Y" -> binding.teslaImage.setImageResource(R.drawable.teslaygrey2)
+                "Model S" -> when (binding.wheelName.text) {
+                    "19r Tempest Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_grey_1)
+                    "21r Arachnid Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_grey_2)
+                }
+                "Model 3" -> when (binding.wheelName.text) {
+                    "18r Aero Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_grey_1)
+                    "19r Sport Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_grey_2)
+                    "20r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_grey_3)
+                }
+                "Model X" -> when (binding.wheelName.text) {
+                    "20r Cyberstream Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_grey_1)
+                    "22r Turbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_grey_2)
+                }
+                "Model Y" -> when (binding.wheelName.text) {
+                    "19r Gemini Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_grey_1)
+                    "20r Induction Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_grey_2)
+                    "21r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_grey_3)
+                }
             }
         }
     }
@@ -86,10 +117,24 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.blue.setOnClickListener {
             binding.colorName.setText(R.string.blue)
             when (binding.teslaName.text) {
-                "Model S" -> binding.teslaImage.setImageResource(R.drawable.teslasblue2)
-                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla3blue2)
-                "Model X" -> binding.teslaImage.setImageResource(R.drawable.teslaxblue2)
-                "Model Y" -> binding.teslaImage.setImageResource(R.drawable.teslayblue2)
+                "Model S" -> when (binding.wheelName.text) {
+                    "19r Tempest Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_blue_1)
+                    "21r Arachnid Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_blue_2)
+                }
+                "Model 3" -> when (binding.wheelName.text) {
+                    "18r Aero Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_blue_1)
+                    "19r Sport Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_blue_2)
+                    "20r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_blue_3)
+                }
+                "Model X" -> when (binding.wheelName.text) {
+                    "20r Cyberstream Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_blue_1)
+                    "22r Turbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_blue_2)
+                }
+                "Model Y" -> when (binding.wheelName.text) {
+                    "19r Gemini Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_blue_1)
+                    "20r Induction Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_blue_2)
+                    "21r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_blue_3)
+                }
             }
         }
     }
@@ -98,10 +143,24 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.black.setOnClickListener {
             binding.colorName.setText(R.string.black)
             when (binding.teslaName.text) {
-                "Model S" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_black_2)
-                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_2)
-                "Model X" -> binding.teslaImage.setImageResource(R.drawable.teslaxblack2)
-                "Model Y" -> binding.teslaImage.setImageResource(R.drawable.teslayblack2)
+                "Model S" -> when (binding.wheelName.text) {
+                    "19r Tempest Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_black_1)
+                    "21r Arachnid Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_black_2)
+                }
+                "Model 3" -> when (binding.wheelName.text) {
+                    "18r Aero Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_1)
+                    "19r Sport Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_2)
+                    "20r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_3)
+                }
+                "Model X" -> when (binding.wheelName.text) {
+                    "20r Cyberstream Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_black_1)
+                    "22r Turbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_black_2)
+                }
+                "Model Y" -> when (binding.wheelName.text) {
+                    "19r Gemini Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_black_1)
+                    "20r Induction Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_black_2)
+                    "21r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_black_3)
+                }
             }
         }
     }
@@ -110,10 +169,24 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.red.setOnClickListener {
             binding.colorName.setText(R.string.red)
             when (binding.teslaName.text) {
-                "Model S" -> binding.teslaImage.setImageResource(R.drawable.teslasred2)
-                "Model 3" -> binding.teslaImage.setImageResource(R.drawable.tesla3red2)
-                "Model X" -> binding.teslaImage.setImageResource(R.drawable.teslaxred2)
-                "Model Y" -> binding.teslaImage.setImageResource(R.drawable.teslayred2)
+                "Model S" -> when (binding.wheelName.text) {
+                    "19r Tempest Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_red_1)
+                    "21r Arachnid Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_red_2)
+                }
+                "Model 3" -> when (binding.wheelName.text) {
+                    "18r Aero Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_red_1)
+                    "19r Sport Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_red_2)
+                    "20r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_red_3)
+                }
+                "Model X" -> when (binding.wheelName.text) {
+                    "20r Cyberstream Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_red_1)
+                    "22r Turbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_red_2)
+                }
+                "Model Y" -> when (binding.wheelName.text) {
+                    "19r Gemini Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_red_1)
+                    "20r Induction Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_red_2)
+                    "21r Überturbine Wheels" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_red_3)
+                }
             }
         }
     }
@@ -122,16 +195,44 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.wheel1.setOnClickListener {
             when (binding.teslaName.text) {
                 "Model S" -> {
-                    binding.wheelName.setText(R.string.wheelsModelS19)
+                    binding.wheelName.setText(R.string.wheels_Model_S_19)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_white_1)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_grey_1)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_blue_1)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_black_1)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_red_1)
+                    }
                 }
                 "Model 3" -> {
-                    binding.wheelName.setText(R.string.wheelsModel318)
+                    binding.wheelName.setText(R.string.wheels_Model_3_18)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_white_1)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_grey_1)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_blue_1)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_1)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_red_1)
+                    }
                 }
                 "Model X" -> {
-                    binding.wheelName.setText(R.string.wheelsModelX20)
+                    binding.wheelName.setText(R.string.wheels_Model_X_20)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_white_1)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_grey_1)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_blue_1)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_black_1)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_red_1)
+                    }
                 }
                 "Model Y" -> {
-                    binding.wheelName.setText(R.string.wheelsModelY19)
+                    binding.wheelName.setText(R.string.wheels_Model_Y_19)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_white_1)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_grey_1)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_blue_1)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_black_1)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_red_1)
+                    }
                 }
             }
         }
@@ -141,16 +242,44 @@ class WheelsAndColorActivity : AppCompatActivity() {
         binding.wheel2.setOnClickListener {
             when (binding.teslaName.text) {
                 "Model S" -> {
-                    binding.wheelName.setText(R.string.wheelsModelS21)
+                    binding.wheelName.setText(R.string.wheels_Model_S_21)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_white_2)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_grey_2)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_blue_2)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_black_2)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_s_red_2)
+                    }
                 }
                 "Model 3" -> {
-                    binding.wheelName.setText(R.string.wheelsModel319)
+                    binding.wheelName.setText(R.string.wheels_Model_3_19)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_white_2)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_grey_2)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_blue_2)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_2)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_red_2)
+                    }
                 }
                 "Model X" -> {
-                    binding.wheelName.setText(R.string.wheelsModelX22)
+                    binding.wheelName.setText(R.string.wheels_Model_X_22)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_white_2)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_grey_2)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_blue_2)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_black_2)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_x_red_2)
+                    }
                 }
                 "Model Y" -> {
-                    binding.wheelName.setText(R.string.wheelsModelY19)
+                    binding.wheelName.setText(R.string.wheels_Model_Y_20)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_white_2)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_grey_2)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_blue_2)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_black_2)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_red_2)
+                    }
                 }
             }
         }
@@ -159,17 +288,25 @@ class WheelsAndColorActivity : AppCompatActivity() {
     private fun clickOnWheel3() {
         binding.wheel3.setOnClickListener {
             when (binding.teslaName.text) {
-                "Model S" -> {
-                    binding.wheelName.setText(R.string.wheelsModelS21)
-                }
                 "Model 3" -> {
-                    binding.wheelName.setText(R.string.wheelsModel320)
-                }
-                "Model X" -> {
-                    binding.wheelName.setText(R.string.wheelsModelX22)
+                    binding.wheelName.setText(R.string.wheels_Model_3_20)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_white_3)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_grey_3)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_blue_3)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_black_3)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_3_red_3)
+                    }
                 }
                 "Model Y" -> {
-                    binding.wheelName.setText(R.string.wheelsModelY21)
+                    binding.wheelName.setText(R.string.wheels_Model_Y_21)
+                    when (binding.colorName.text) {
+                        "Pearl White Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_white_3)
+                        "Midnight Silver Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_grey_3)
+                        "Deep Blue Metallic" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_blue_3)
+                        "Solid Black" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_black_3)
+                        "Red Multi-Coat" -> binding.teslaImage.setImageResource(R.drawable.tesla_y_red_3)
+                    }
                 }
             }
         }
