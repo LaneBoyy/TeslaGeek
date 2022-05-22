@@ -1,9 +1,14 @@
 package com.example.teslageek
 
+import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.drawToBitmap
 import com.example.teslageek.databinding.ActivityWheelsAndColorBinding
+import java.io.ByteArrayOutputStream
 
 class WheelsAndColorActivity : AppCompatActivity() {
 
@@ -59,6 +64,7 @@ class WheelsAndColorActivity : AppCompatActivity() {
         clickOnWheel1()
         clickOnWheel2()
         clickOnWheel3()
+        clickOnArrow()
     }
 
     private fun clickOnWhite() {
@@ -309,6 +315,15 @@ class WheelsAndColorActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+    }
+
+    private fun clickOnArrow(){
+        binding.arrowNext.setOnClickListener {
+            val intent = Intent(this, EndActivity::class.java)
+            intent.putExtra("teslaName", binding.teslaName.text)
+            intent.putExtra("teslaType", binding.teslaType.text)
+            startActivity(intent)
         }
     }
 }
