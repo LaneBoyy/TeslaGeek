@@ -1,14 +1,13 @@
 package com.example.teslageek
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
-import androidx.core.view.drawToBitmap
 import com.example.teslageek.databinding.ActivityWheelsAndColorBinding
-import java.io.ByteArrayOutputStream
 
 class WheelsAndColorActivity : AppCompatActivity() {
 
@@ -318,12 +317,29 @@ class WheelsAndColorActivity : AppCompatActivity() {
         }
     }
 
-    private fun clickOnArrow(){
+    private fun clickOnArrow() {
         binding.arrowNext.setOnClickListener {
             val intent = Intent(this, EndActivity::class.java)
+            val bitmap = binding.teslaImage.drawable.toBitmap()
             intent.putExtra("teslaName", binding.teslaName.text)
             intent.putExtra("teslaType", binding.teslaType.text)
+            intent.putExtra("teslaBitmap", bitmap.saveBitmapByName())
             startActivity(intent)
         }
+    }
+
+    private fun Bitmap.saveBitmapByName(): String? {
+        try {
+            val filename = "bitmap.png"
+            val stream = openFileOutput(filename, Context.MODE_PRIVATE)
+            this.compress(Bitmap.CompressFormat.PNG, 100, stream)
+
+            stream.close()
+            this.recycle()
+            return filename
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return null
     }
 }
