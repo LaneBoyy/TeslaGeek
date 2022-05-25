@@ -1,5 +1,6 @@
 package com.example.teslageek
 
+import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -13,14 +14,29 @@ class EndActivity : AppCompatActivity() {
         ActivityEndBinding.inflate(layoutInflater)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val teslaName = intent.getStringExtra("teslaName").toString()
-        val teslaType = intent.getStringExtra("teslaType").toString()
+
+        val teslaName = intent.getStringExtra("teslaName")
+        val teslaType = intent.getStringExtra("teslaType")
         val teslaBitmap = intent.getStringExtra("teslaBitmap")?.getBitmapByName()
+        val powerReserve = intent.getStringExtra("powerReserve1").toString()
+        val acceleration = intent.getStringExtra("acceleration1").toString()
+        val maxSpeed = intent.getStringExtra("maxSpeed1").toString()
+        val colorName = intent.getStringExtra("colorName")
+        val wheelsName = intent.getStringExtra("wheelsName")
+
         binding.teslaName.text = teslaName
         binding.teslaType.text = teslaType
+        binding.fullNameTesla.text = ("$teslaName   $teslaType")
+        binding.powerReserve.text = ("Дальность хода:  $powerReserve")
+        binding.accelerate.text = ("Ускорение 0-100:  $acceleration")
+        binding.maxSpeed.text = ("Максимальная скорость:  $maxSpeed")
+        binding.endColor.text = ("Цвет:  $colorName")
+        binding.endWheels.text = ("Диски:  $wheelsName")
+
         if (teslaBitmap != null) {
             binding.teslaImage.setImageBitmap(teslaBitmap)
         }

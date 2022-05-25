@@ -18,9 +18,8 @@ class WheelsAndColorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val intentToNext = intent
-        val teslaModelName2 = intentToNext.getStringExtra("teslaName").toString()
-        val teslaTypeName2 = intentToNext.getStringExtra("teslaType").toString()
+        val teslaModelName2 = intent.getStringExtra("teslaName")
+        val teslaTypeName2 = intent.getStringExtra("teslaType")
         binding.teslaName.text = teslaModelName2
         binding.teslaType.text = teslaTypeName2
 
@@ -320,10 +319,21 @@ class WheelsAndColorActivity : AppCompatActivity() {
     private fun clickOnArrow() {
         binding.arrowNext.setOnClickListener {
             val intent = Intent(this, EndActivity::class.java)
+            val powerReserve = intent.getStringExtra("powerReserve").toString()
+            val acceleration = intent.getStringExtra("acceleration").toString()
+            val maxSpeed = intent.getStringExtra("maxSpeed").toString()
             val bitmap = binding.teslaImage.drawable.toBitmap()
+
             intent.putExtra("teslaName", binding.teslaName.text)
             intent.putExtra("teslaType", binding.teslaType.text)
+            intent.putExtra("teslaType", binding.teslaType.text)
+            intent.putExtra("powerReserve1", powerReserve)
+            intent.putExtra("acceleration1", acceleration)
+            intent.putExtra("maxSpeed1", maxSpeed)
+            intent.putExtra("colorName", binding.colorName.text)
+            intent.putExtra("wheelsName", binding.wheelName.text)
             intent.putExtra("teslaBitmap", bitmap.saveBitmapByName())
+
             startActivity(intent)
         }
     }

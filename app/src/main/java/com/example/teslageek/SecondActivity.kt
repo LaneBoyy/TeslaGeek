@@ -3,10 +3,10 @@ package com.example.teslageek
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.RadioGroup
 import com.example.teslageek.databinding.ActivitySecondBinding
+import java.io.Serializable
 
 class SecondActivity : AppCompatActivity() {
 
@@ -31,10 +31,20 @@ class SecondActivity : AppCompatActivity() {
         setRadioButtons()
         launchNextScreen()
 
+//        data class TransferData(
+//            var powerReserve1: String? = binding.PowerReserve.text as String,
+//            var accelerate1: String? = binding.Acceleration0100.text as String,
+//            var maxSpeed1: String? = binding.MaxSpeed.text as String
+//        ) : Serializable
+//
+//        val transferData = TransferData()
+//        val intent = Intent(this, EndActivity::class.java)
+//        intent.putExtra("DataIntent", transferData as Serializable)
+
     }
 
     private fun setRadioButtons() {
-        binding.radioGroup.setOnCheckedChangeListener(object:RadioGroup.OnCheckedChangeListener {
+        binding.radioGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(radioGroup: RadioGroup?, radioId: Int) {
                 when (radioId) {
                     binding.radioButtonFirstConfig.id -> {
@@ -63,12 +73,12 @@ class SecondActivity : AppCompatActivity() {
         var teslaType = ""
         when (teslaModelName) {
             "Model S" -> {
-                binding.radioButtonFirstConfig.text = "Long Rage"
+                binding.radioButtonFirstConfig.text = "Long  Range"
                 binding.radioButtonSecondConfig.text = "Plaid"
                 binding.radioButtonThirdConfig.visibility = View.GONE
                 when (activeType) {
                     1 -> {
-                        powerReserve = "663 km"
+                        powerReserve = "652 km"
                         maxSpeed = "250 km/h"
                         acceleration0100 = "3.2 s"
                         teslaType = "Long Range"
@@ -97,27 +107,24 @@ class SecondActivity : AppCompatActivity() {
                     }
                     3 -> {
                         powerReserve = "547 km"
-                        maxSpeed = "351 km/h"
-                        acceleration0100 = "3.7 s"
+                        maxSpeed = "261 km/h"
+                        acceleration0100 = "3.3 s"
                         teslaType = "Performance"
                     }
                 }
             }
             "Model Y" -> {
+                binding.radioButtonFirstConfig.text = "Long Range"
+                binding.radioButtonSecondConfig.text = "Performance"
+                binding.radioButtonThirdConfig.visibility = View.GONE
                 when (activeType) {
                     1 -> {
-                        powerReserve = "393 km"
-                        maxSpeed = "217 km/h"
-                        acceleration0100 = "5.3 s"
-                        teslaType = "Standard Plus"
-                    }
-                    2 -> {
                         powerReserve = "533 km"
                         maxSpeed = "217 km/h"
-                        acceleration0100 = "5 s"
+                        acceleration0100 = "5.0 s"
                         teslaType = "Long Range"
                     }
-                    3 -> {
+                    2 -> {
                         powerReserve = "514 km"
                         maxSpeed = "250 km/h"
                         acceleration0100 = "3.7 s"
@@ -126,18 +133,18 @@ class SecondActivity : AppCompatActivity() {
                 }
             }
             "Model X" -> {
-                binding.radioButtonFirstConfig.text = "Long Rage"
+                binding.radioButtonFirstConfig.text = "Long Range"
                 binding.radioButtonSecondConfig.text = "Plaid"
                 binding.radioButtonThirdConfig.visibility = View.GONE
                 when (activeType) {
                     1 -> {
-                        powerReserve = "580 km"
+                        powerReserve = "560 km"
                         maxSpeed = "250 km/h"
                         acceleration0100 = "3.9 s"
                         teslaType = "Long Range"
                     }
                     2 -> {
-                        powerReserve = "547 km"
+                        powerReserve = "536 km"
                         maxSpeed = "262 km/h"
                         acceleration0100 = "2.6 s"
                         teslaType = "Plaid"
@@ -154,10 +161,13 @@ class SecondActivity : AppCompatActivity() {
 
     private fun launchNextScreen() {
         binding.arrowNext.setOnClickListener {
-            val intentToNext = Intent(this, WheelsAndColorActivity::class.java)
-            intentToNext.putExtra("teslaName", teslaModelName)
-            intentToNext.putExtra("teslaType", binding.textTypeTesla.text)
-            startActivity(intentToNext)
+            val intent = Intent(this, WheelsAndColorActivity::class.java)
+            intent.putExtra("teslaName", teslaModelName)
+            intent.putExtra("teslaType", binding.textTypeTesla.text)
+            intent.putExtra("powerReserve", binding.PowerReserve.text)
+            intent.putExtra("acceleration", binding.Acceleration0100.text)
+            intent.putExtra("maxSpeed", binding.MaxSpeed.text)
+            startActivity(intent)
         }
     }
 }

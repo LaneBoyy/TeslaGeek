@@ -26,5 +26,6 @@
     <string name="wheels_Model_Y_19">19r Gemini Wheels</string>
     <string name="wheels_Model_Y_20">20r Induction Wheels</string>
     <string name="wheels_Model_Y_21">21r Überturbine Wheels</string>
+    <string name="textInHeader">Выбранная комлектация</string>
 
 </resources>
