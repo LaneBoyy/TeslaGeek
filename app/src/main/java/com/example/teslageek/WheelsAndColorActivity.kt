@@ -321,20 +321,20 @@ class WheelsAndColorActivity : AppCompatActivity() {
             val powerReserve = intent.getStringExtra("powerReserve")
             val acceleration = intent.getStringExtra("acceleration")
             val maxSpeed = intent.getStringExtra("maxSpeed")
-
             val bitmap = binding.teslaImage.drawable.toBitmap()
-            val intent = Intent(this, EndActivity::class.java).apply {
-                putExtra("teslaName", binding.teslaName.text)
-                putExtra("teslaType", binding.teslaType.text)
-                putExtra("teslaType", binding.teslaType.text)
-                putExtra("powerReserve", powerReserve)
-                putExtra("acceleration", acceleration)
-                putExtra("maxSpeed", maxSpeed)
-                putExtra("colorName", binding.colorName.text)
-                putExtra("wheelsName", binding.wheelName.text)
-                putExtra("teslaBitmap", bitmap.saveBitmapByName())
 
-            }
+            val teslaResult = TeslaResult(
+                binding.teslaName.text.toString(),
+                binding.teslaType.text.toString(),
+                powerReserve.toString(),
+                acceleration.toString(),
+                maxSpeed.toString(),
+                binding.colorName.text.toString(),
+                binding.wheelName.text.toString(),
+                bitmap.saveBitmapByName()
+            )
+            val intent = Intent(this, EndActivity::class.java)
+            intent.putExtra("resultKey", teslaResult)
             startActivity(intent)
         }
     }

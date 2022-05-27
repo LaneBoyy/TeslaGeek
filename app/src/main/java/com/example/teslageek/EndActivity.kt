@@ -19,26 +19,21 @@ class EndActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val teslaName = intent.getStringExtra("teslaName")
-        val teslaType = intent.getStringExtra("teslaType")
-        val teslaBitmap = intent.getStringExtra("teslaBitmap")?.getBitmapByName()
-        val powerReserve = intent.getStringExtra("powerReserve").toString()
-        val acceleration = intent.getStringExtra("acceleration").toString()
-        val maxSpeed = intent.getStringExtra("maxSpeed").toString()
-        val colorName = intent.getStringExtra("colorName")
-        val wheelsName = intent.getStringExtra("wheelsName")
+        val teslaResult = intent.getParcelableExtra<TeslaResult>("resultKey")!!
 
-        binding.teslaName.text = teslaName
-        binding.teslaType.text = teslaType
-        binding.fullNameTesla.text = ("$teslaName   $teslaType")
-        binding.powerReserve.text = ("Дальность хода:  $powerReserve")
-        binding.accelerate.text = ("Ускорение 0-100:  $acceleration")
-        binding.maxSpeed.text = ("Максимальная скорость:  $maxSpeed")
-        binding.endColor.text = ("Цвет:  $colorName")
-        binding.endWheels.text = ("Диски:  $wheelsName")
+        with(teslaResult) {
+            binding.teslaName.text = teslaName
+            binding.teslaType.text = teslaType
+            binding.fullNameTesla.text = ("$teslaName   $teslaType")
+            binding.powerReserve.text = ("Дальность хода:  $powerReserve")
+            binding.accelerate.text = ("Ускорение 0-100:  $acceleration")
+            binding.maxSpeed.text = ("Макс. скорость:  $maxSpeed")
+            binding.endColor.text = ("Цвет:  $colorName")
+            binding.endWheels.text = ("Диски:  $wheelsName")
 
-        if (teslaBitmap != null) {
-            binding.teslaImage.setImageBitmap(teslaBitmap)
+            if (teslaBitmap != null) {
+                binding.teslaImage.setImageBitmap(teslaBitmap.getBitmapByName())
+            }
         }
     }
 
@@ -53,9 +48,5 @@ class EndActivity : AppCompatActivity() {
             e.printStackTrace()
         }
         return null
-    }
-
-    companion object{
-        const val POWER_KEY = "power"
     }
 }

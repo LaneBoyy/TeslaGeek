@@ -88,11 +88,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:layout_constraintVertical_bias="0.2"
-        tools:text="-Полное наименование автомобиля-" />
+        tools:text="Полное наименование автомобиля" />
 
     <TextView
         android:id="@+id/powerReserve"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -108,7 +108,7 @@
 
     <TextView
         android:id="@+id/accelerate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -124,7 +124,7 @@
 
     <TextView
         android:id="@+id/maxSpeed"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
@@ -136,7 +136,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:layout_constraintVertical_bias="0.55"
-        tools:text="Максимальная скорость:" />
+        tools:text="Макс. скорость:" />
 
     <TextView
         android:id="@+id/endColor"

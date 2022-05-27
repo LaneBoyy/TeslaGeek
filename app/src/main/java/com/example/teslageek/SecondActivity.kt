@@ -31,17 +31,6 @@ class SecondActivity : AppCompatActivity() {
         setConfiguration()
         setRadioButtons()
         launchNextScreen()
-
-//        data class TransferData(
-//            var powerReserve1: String? = binding.PowerReserve.text as String,
-//            var accelerate1: String? = binding.Acceleration0100.text as String,
-//            var maxSpeed1: String? = binding.MaxSpeed.text as String
-//        ) : Serializable
-//
-//        val transferData = TransferData()
-//        val intent = Intent(this, EndActivity::class.java)
-//        intent.putExtra("DataIntent", transferData as Serializable)
-
     }
 
     private fun setRadioButtons() {
