@@ -22,9 +22,9 @@ class EndActivity : AppCompatActivity() {
         val teslaName = intent.getStringExtra("teslaName")
         val teslaType = intent.getStringExtra("teslaType")
         val teslaBitmap = intent.getStringExtra("teslaBitmap")?.getBitmapByName()
-        val powerReserve = intent.getStringExtra("powerReserve1").toString()
-        val acceleration = intent.getStringExtra("acceleration1").toString()
-        val maxSpeed = intent.getStringExtra("maxSpeed1").toString()
+        val powerReserve = intent.getStringExtra("powerReserve").toString()
+        val acceleration = intent.getStringExtra("acceleration").toString()
+        val maxSpeed = intent.getStringExtra("maxSpeed").toString()
         val colorName = intent.getStringExtra("colorName")
         val wheelsName = intent.getStringExtra("wheelsName")
 
@@ -53,5 +53,9 @@ class EndActivity : AppCompatActivity() {
             e.printStackTrace()
         }
         return null
+    }
+
+    companion object{
+        const val POWER_KEY = "power"
     }
 }

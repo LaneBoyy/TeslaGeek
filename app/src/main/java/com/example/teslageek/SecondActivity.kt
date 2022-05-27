@@ -3,6 +3,7 @@ package com.example.teslageek
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.RadioGroup
 import com.example.teslageek.databinding.ActivitySecondBinding
@@ -164,9 +165,9 @@ class SecondActivity : AppCompatActivity() {
             val intent = Intent(this, WheelsAndColorActivity::class.java)
             intent.putExtra("teslaName", teslaModelName)
             intent.putExtra("teslaType", binding.textTypeTesla.text)
-            intent.putExtra("powerReserve", binding.PowerReserve.text)
-            intent.putExtra("acceleration", binding.Acceleration0100.text)
-            intent.putExtra("maxSpeed", binding.MaxSpeed.text)
+            intent.putExtra("powerReserve", binding.PowerReserve.text.toString())
+            intent.putExtra("acceleration", binding.Acceleration0100.text.toString())
+            intent.putExtra("maxSpeed", binding.MaxSpeed.text.toString())
             startActivity(intent)
         }
     }
